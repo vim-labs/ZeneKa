@@ -1,0 +1,9 @@
+*.key
+.DS_Store
+node_modules
+out
+out.ztf
+proof.json
+verifier.sol
+witness
+zkp_verify.zok
