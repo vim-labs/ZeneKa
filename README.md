@@ -90,3 +90,23 @@ https://github.com/Zokrates/ZoKrates
 
 libsnark:
 https://github.com/scipr-lab/libsnark
+
+## Ethereum Smart Contracts
+
+**ZeneKa G16**
+
+```
+0x599451C385b8Ff0e7E39bCDA0d31Fb795e36B919
+```
+
+**ZeneKa GM17**
+
+```
+0x2867AC6335C247346454AA7Bd0CE1Eb76fd475B0
+```
+
+**ZeneKa PGHR13**
+
+```
+0xF13Ca0f66007A20111FedF443F9BbB688c87697F
+```
