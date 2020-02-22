@@ -2,7 +2,7 @@
 
 A generalized zkSNARK verification provider.
 
-Zero-knowledge succinct non-interactive argument of knowledge proofs are compiled with ZoKrates into Quadratic Arithmetic Programs (QAPs) then submitted as verification keys with 3 supported proving schemes (G16, GM17, and PGHR13). Verification keys are hashed with `keccak256` to create a verification identifier. Proofs are first submitted to a verification id as a sha3 proofHash commit, then revealed in a second stage to validate the requests. Upon validation, the public inputs for a verification id / prover pair are available for further verification and transaction processing.
+Zero-knowledge succinct non-interactive argument of knowledge proofs are compiled with ZoKrates and libsnark into Quadratic Arithmetic Programs (QAPs) then submitted as verification keys with 3 supported proving schemes (G16, GM17, and PGHR13). Verification keys are hashed with `keccak256` to create a verification identifier. Proofs are first submitted to a verification id as a sha3 proofHash commit, then revealed in a second stage to validate the requests. Upon validation, the public inputs for a verification id / prover pair are available for further verification and transaction processing.
 
 ```bash
 node ./example.js node example.js example.zok.tmp 'hello world!' 0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1
@@ -82,3 +82,11 @@ Then, prove:
 Returning the inputs:
 
 `zeneKa<ProvingScheme>.input(<Verification_Id>, <Prover>)`
+
+## Resources
+
+ZoKrates:
+https://github.com/Zokrates/ZoKrates
+
+libsnark:
+https://github.com/scipr-lab/libsnark
