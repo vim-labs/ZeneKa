@@ -58,7 +58,7 @@ h[1] == {{h1}}
 return address
 ```
 
-The inputs `a`, `b`, `c`, `d` store four private 128-bit words provided as unsigned integers ranging from [0, P-1], where `P` is a large `alt_bn128` prime `21888242871839275222246405745257275088548364400416034343698204186575808495617`. (See [EIP-196](https://eips.ethereum.org/EIPS/eip-196)). A whitelisted challenging Ethereum address used for proof-submission as an unsigned integer `address`, irrevocably intertwining the zkSNARK proof with the prover, such that attempts to resubmit additional valid proofs corrupt this value.
+The inputs `a`, `b`, `c`, `d` store four private 128-bit words provided as unsigned integers ranging from [0, P-1], where `P` is a large `alt_bn128` prime `21888242871839275222246405745257275088548364400416034343698204186575808495617`. (See [EIP-196](https://eips.ethereum.org/EIPS/eip-196)). This proof allows a prover to prove the possession of information ("hello world!" in this example) to a challenger without revealing any details about that information. Moreover, we can trust the computation which asserts this proof from an untrusted source. A whitelisted challenging Ethereum address used for proof-submission as an unsigned integer `address`, irrevocably intertwining the zkSNARK proof with the prover, such that attempts to resubmit additional valid proofs corrupt this value.
 
 To create a verifier for this proof, we register:
 
