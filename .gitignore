@@ -1,5 +1,6 @@
 *.key
 .DS_Store
+build
 node_modules
 out
 out.ztf

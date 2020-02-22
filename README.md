@@ -63,17 +63,24 @@ return address
 The inputs `a`, `b`, `c`, `d` store four private 128-bit words provided as unsigned integers ranging from [0, P-1], where `P` is a large `alt_bn128` prime `21888242871839275222246405745257275088548364400416034343698204186575808495617`. (See [EIP-196](https://eips.ethereum.org/EIPS/eip-196)). A whitelisted challenging Ethereum address used for proof-submission as an unsigned integer `address`, irrevocably intertwining the zkSNARK proof with the prover, such that attempts to resubmit additional valid proofs corrupt this value.
 
 To create a verifier for this proof, we register:
+
 `zeneKa<ProvingScheme>.register<ProvingScheme>(...<Verification_Params>, {from: <Registrant>})`
 
 The verification id and proofHash are calculated as:
-`web3.utils.soliditySha3(...<FlatVerification_Params>)`
-`web3.utils.soliditySha3(...<FlatProof>)`
+
+```
+web3.utils.soliditySha3(...<FlatVerification_Params>)
+web3.utils.soliditySha3(...<FlatProof>)
+```
 
 To submit a proof, we first commit:
+
 `zeneKa<ProvingScheme>.commit<ProvingScheme>(<Verification_Id>, <ProofHash>, {from: <Prover>})`
 
 Then, prove:
+
 `zeneKa<ProvingScheme>.prove<ProvingScheme>(<Verification_Id>, ...<Proof>, {from: <Prover>})`
 
 Returning the inputs:
+
 `zeneKa<ProvingScheme>.input(<Verification_Id>, <Prover>)`
