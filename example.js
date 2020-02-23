@@ -150,7 +150,7 @@ const toUintArr = arr =>
   // Pad with zeros
   while (chunks_data.length < 4) chunks_data = [0, ...chunks_data];
 
-  // Split address hex into 2 chunks (with leading zeros), then parse as ints
+  // Parse address as Uint < P-1
   const addr = BigInt(address).toString();
 
   const zok_inputs = [...chunks_data, addr].join(" ");
