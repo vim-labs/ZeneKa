@@ -191,17 +191,6 @@ const toUintArr = arr =>
     .filter(String)
     .map((v, i, arr) => (i == 0 ? v : v - arr[i - 1]));
   console.log("Circuit inputs:");
-  console.log(
-    "(a)",
-    " ".repeat(inputIndices[0] - 4),
-    "(b)",
-    " ".repeat(inputIndices[1] - 5),
-    "(c)",
-    " ".repeat(inputIndices[2] - 5),
-    "(d)",
-    " ".repeat(inputIndices[3] - 5),
-    "(address)"
-  );
 
   console.log(zok_inputs);
   console.log("-".repeat(80));
