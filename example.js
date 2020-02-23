@@ -158,7 +158,7 @@ const toUintArr = arr =>
   // Hash data
   const dataChunkB = chunks_data.map(chunk => {
     const b = Buffer.alloc(16);
-    const v = Buffer.from(BigInt(chunk).toString(16), "hex");
+    const v = Buffer.from(zpad(BigInt(chunk).toString(16)), "hex");
     b.set(v, 16 - v.byteLength);
     return b;
   });
@@ -184,14 +184,7 @@ const toUintArr = arr =>
   console.log(filenameOut);
   console.log("-".repeat(80));
 
-  // Spaced labels by index
-  let inputIndices = zok_inputs
-    .split("")
-    .map((e, i) => (e === " " ? i : ""))
-    .filter(String)
-    .map((v, i, arr) => (i == 0 ? v : v - arr[i - 1]));
   console.log("Circuit inputs:");
-
   console.log(zok_inputs);
   console.log("-".repeat(80));
 

@@ -5,8 +5,8 @@ def main(private field a, private field b, private field c, private field d, fie
 	field[2] h = sha256packed([a, b, c, d])
 
 	// Validate the expected hash.
-	h[0] == 121158951419709800165012464658015428218
-	h[1] == 256830352463011306888809935856524071444
+	h[0] == 208758558516095742876619181450688209490
+	h[1] == 112335195806943031135003151303170347264
 
 	// Return our desired reciepent
 	return address
