@@ -5,7 +5,7 @@ const web3 = require("web3");
 const crypto = require("crypto");
 
 // Pad left with zeros if odd length
-const zpad = x => "0" * (x.length % 2) + x;
+const zpad = x => (x.length % 2 == 0 ? x : "0" + x);
 
 // Takes a buffer and returns a sha2-256 hash buffer.
 const sha256 = b =>
