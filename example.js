@@ -209,9 +209,7 @@ const toUintArr = arr =>
   let proofG16_inputs = Object.values(proofG16.inputs);
   proofG16 = [...proofG16_proof, proofG16_inputs];
 
-  const proofHashG16 = web3.utils.soliditySha3(
-    ...Object.values(proofG16).flat(2)
-  );
+  const proofHashG16 = web3.utils.soliditySha3(...proofG16.flat(3));
 
   proofG16 = toUintArr(proofG16);
 
@@ -229,9 +227,7 @@ const toUintArr = arr =>
   let proofGM17_inputs = Object.values(proofGM17.inputs);
   proofGM17 = [...proofGM17_proof, proofGM17_inputs];
 
-  const proofHashGM17 = web3.utils.soliditySha3(
-    ...Object.values(proofGM17).flat(2)
-  );
+  const proofHashGM17 = web3.utils.soliditySha3(...proofGM17.flat(3));
 
   proofGM17 = toUintArr(proofGM17);
 
@@ -249,9 +245,7 @@ const toUintArr = arr =>
   let proofPGHR13_inputs = Object.values(proofPGHR13.inputs);
   proofPGHR13 = [...proofPGHR13_proof, proofPGHR13_inputs];
 
-  const proofHashPGHR13 = web3.utils.soliditySha3(
-    ...Object.values(proofPGHR13).flat(2)
-  );
+  const proofHashPGHR13 = web3.utils.soliditySha3(...proofPGHR13.flat(3));
 
   proofPGHR13 = toUintArr(proofPGHR13);
 
