@@ -143,6 +143,7 @@ contract ZeneKaPGHR13 is ZeneKa {
             _proofHashToProver[_proofHash] != address(0)
         ) return false;
         _proofHashToProver[_proofHash] = msg.sender;
+        _proofHashToBlock[_proofHash] = block.number;
         emit Commit(_id, _proofHash, msg.sender);
         return true;
     }
@@ -165,7 +166,8 @@ contract ZeneKaPGHR13 is ZeneKa {
         if (_proofHashToProven[proofHash]) return true;
         if (
             !_idToVkParamsPGHR13[_id].registered ||
-            _proofHashToProver[proofHash] != msg.sender
+            _proofHashToProver[proofHash] != msg.sender ||
+            block.number <= _proofHashToBlock[proofHash]
         ) return false;
 
         VerifyingKeyPGHR13 memory vk = _verifyingKeyPGHR13(_id);

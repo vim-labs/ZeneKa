@@ -40,6 +40,13 @@ contract("ZeneKaG16", accounts => {
     });
   });
 
+  it("should return a commit prover", async () => {
+    const commitProver = await zeneKaG16.prover(proofHash["proofHashG16"], {
+      from: k0
+    });
+    assert(commitProver == k0);
+  });
+
   it("should throw if adding a duplicate proofHash", async () => {
     try {
       await zeneKaG16.commitG16(id["vkG16Id"], proofHash["proofHashG16"], {
@@ -141,6 +148,13 @@ contract("ZeneKaGM17", accounts => {
     await zeneKaGM17.commitGM17(id["vkGM17Id"], proofHash["proofHashGM17"], {
       from: k0
     });
+  });
+
+  it("should return a commit prover", async () => {
+    const commitProver = await zeneKaGM17.prover(proofHash["proofHashGM17"], {
+      from: k0
+    });
+    assert(commitProver == k0);
   });
 
   it("should throw if adding a duplicate proofHash", async () => {
@@ -248,6 +262,16 @@ contract("ZeneKaPGHR13", accounts => {
         from: k0
       }
     );
+  });
+
+  it("should return a commit prover", async () => {
+    const commitProver = await zeneKaPGHR13.prover(
+      proofHash["proofHashPGHR13"],
+      {
+        from: k0
+      }
+    );
+    assert(commitProver == k0);
   });
 
   it("should throw if adding a duplicate proofHash", async () => {

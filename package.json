@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
     "solc-js": "^1.0.1",
     "truffle": "^5.1.14",
     "web3": "^1.2.6"

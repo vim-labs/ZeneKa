@@ -117,6 +117,7 @@ contract ZeneKaGM17 is ZeneKa {
             _proofHashToProver[_proofHash] != address(0)
         ) return false;
         _proofHashToProver[_proofHash] = msg.sender;
+        _proofHashToBlock[_proofHash] = block.number;
         emit Commit(_id, _proofHash, msg.sender);
         return true;
     }
@@ -132,7 +133,8 @@ contract ZeneKaGM17 is ZeneKa {
         if (_proofHashToProven[proofHash]) return true;
         if (
             !_idToVkParamsGM17[_id].registered ||
-            _proofHashToProver[proofHash] != msg.sender
+            _proofHashToProver[proofHash] != msg.sender ||
+            block.number <= _proofHashToBlock[proofHash]
         ) return false;
 
         VerifyingKeyGM17 memory vk = _verifyingKeyGM17(_id);
